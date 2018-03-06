@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPITest", "CHAPITest\CHAPITest.csproj", "{00E9503E-DDE5-4F9A-88FA-90FA0056E45D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPIService", "CHAPITest\CHAPIService.csproj", "{00E9503E-DDE5-4F9A-88FA-90FA0056E45D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPITest.Tests", "CHAPITest.Tests\CHAPITest.Tests.csproj", "{C15EFD2C-2655-47F2-943D-D793422F8BDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPIService.Tests", "CHAPITest.Tests\CHAPIService.Tests.csproj", "{C15EFD2C-2655-47F2-943D-D793422F8BDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
