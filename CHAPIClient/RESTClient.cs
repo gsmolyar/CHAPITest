@@ -20,15 +20,15 @@ namespace CHAPIClient
 
     class RESTClient
     {
-        public string endPoint { get; set; }
-        public string content { get; set; }
-        public HTTPVerb httpMethod { get; set; }
+        public string EndPoint { get; set; }
+        public string Content { get; set; }
+        public HTTPVerb HttpMethod { get; set; }
 
         public RESTClient(string Uri, string content, HTTPVerb verb)
         {
-            endPoint = Uri;
-            this.content = content;
-            httpMethod = verb;
+            EndPoint = Uri;
+            this.Content = content;
+            HttpMethod = verb;
 
         }
 
@@ -36,8 +36,8 @@ namespace CHAPIClient
         {
             string responseVal = string.Empty;
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endPoint);
-            request.Method = httpMethod.ToString();
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(EndPoint);
+            request.Method = HttpMethod.ToString();
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {

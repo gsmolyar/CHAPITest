@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Diagnostics;
 
-namespace CHAPITest
+
+// Target-specific output via inheritance
+// Specialized target-specific custom processing via specific interface method implementation
+
+namespace Factory
 {
-    public class OutputWriter: IOutputWriter
+
+    public abstract class OutputWriter: IOutputWriter
     {
         public virtual void WriteOutput(string resource)
         {
         }
+
+        public virtual void CustomProcessing()
+        {
+        }
+
     }
 
     public class ConsoleWriter : OutputWriter, IOutputWriterConsole
@@ -18,8 +29,13 @@ namespace CHAPITest
         {
             Console.Write(resource);
             Console.ReadKey();
-            return;
         }
+
+        public override void CustomProcessing()
+        {
+            Debug.Write("Message from CustomProcessingConsole");
+        }
+
     }
 
     public class DBWriter : OutputWriter, IOutputWriterDB
@@ -28,6 +44,7 @@ namespace CHAPITest
         {
             throw new Exception("Not Implemented");
         }
+
     }
 
     public class SQLServerWriter : DBWriter, IOutputWriterSQLServer
@@ -36,6 +53,12 @@ namespace CHAPITest
         {
             throw new Exception("Not Implemented");
         }
+
+        public override void CustomProcessing()
+        {
+            Debug.Write("This is CustomProcessing for DB - SQLServer");
+        }
+
     }
 
     public class OracleWriter : DBWriter, IOutputWriterOracle
@@ -44,6 +67,12 @@ namespace CHAPITest
         {
             throw new Exception("Not Implemented");
         }
+
+        public override void CustomProcessing()
+        {
+            Debug.Write("This is CustomProcessing for DB - Oracle");
+        }
+
     }
 
 }

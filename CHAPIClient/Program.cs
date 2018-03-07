@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using System.Configuration;
-using CHAPITest;
+using CHAPIService;
+using Factory;
 
 namespace CHAPIClient
 {
@@ -14,6 +15,22 @@ namespace CHAPIClient
     {
         static void Main(string[] args)
         {
+
+            // Instantiate the Factory
+            OutputFactory outputFactory = new OutputFactory();
+
+            // Ask Factory to instantiate the specific output writer based on configuration
+            IOutputWriter outWriter = outputFactory.CreateOutputWriter();
+
+            // Execute the output writer's functions
+            outWriter.CustomProcessing();
+            outWriter.WriteOutput("Hello World");
+            
+
+
+
+            //TODO: establish Web API connection to the service
+
             // Get the service URI
 
             //var actionUrl = .Action("Content", "Import", new
@@ -33,17 +50,6 @@ namespace CHAPIClient
             //RESTClient restClient = new RESTClient("/api/CHAPI", "Hello, World", HTTPVerb.POST);
             //string result = restClient.MakeRequest();
 
-
-            //TODO: establish Web API connection to the service
-
-            // Instantiate the Factory
-
-            //TODO: decouple Factory from service - extract Factory code into a separate class either in the client or another project
-            string outputTarget = System.Configuration.ConfigurationManager.AppSettings["OutputTarget"];
-            CHAPITest.OutputFactory outputFactory = new CHAPITest.OutputFactory(outputTarget);
-
-            IOutputWriter outWriter = outputFactory.CreateOutputWriter();
-            outWriter.WriteOutput("Hello World");
 
         }
     }

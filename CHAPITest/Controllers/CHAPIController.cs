@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace CHAPITest.Controllers
+namespace CHAPIService
 {
     public class CHAPIController : ApiController
     {
@@ -16,6 +16,12 @@ namespace CHAPITest.Controllers
         //    var url = this.Url.Link("Default", new { Controller = "CHAPI", Action = "Post" });
         //    return url;
         //}
+
+        public string GetOutputTarget()
+        {
+            return System.Configuration.ConfigurationManager.AppSettings["OutputTarget"];
+        }
+
 
         public IEnumerable<string> GetURL()
         {
