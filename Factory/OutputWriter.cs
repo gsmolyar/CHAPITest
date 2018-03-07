@@ -13,64 +13,72 @@ namespace Factory
 
     public abstract class OutputWriter: IOutputWriter
     {
-        public virtual void WriteOutput(string resource)
+        public virtual bool WriteOutput(string resource)
         {
+            return false;
         }
 
-        public virtual void CustomProcessing()
+        public virtual bool CustomProcessing()
         {
+            return false;
         }
 
     }
 
     public class ConsoleWriter : OutputWriter, IOutputWriterConsole
     {
-        public override void WriteOutput(string resource)
+        public override bool WriteOutput(string resource)
         {
             Console.Write(resource);
             Console.ReadKey();
+            return true;
         }
 
-        public override void CustomProcessing()
+        public override bool CustomProcessing()
         {
-            Debug.Write("Message from CustomProcessingConsole");
+            Debug.Write("CustomProcessing for Console");
+            return true;
         }
 
     }
 
     public class DBWriter : OutputWriter, IOutputWriterDB
     {
-        public override void WriteOutput(string resource)
+        public override bool WriteOutput(string resource)
         {
-            throw new Exception("Not Implemented");
+            return false;
         }
 
     }
 
     public class SQLServerWriter : DBWriter, IOutputWriterSQLServer
     {
-        public override void WriteOutput(string resource)
+        public override bool WriteOutput(string resource)
         {
-            throw new Exception("Not Implemented");
+            Debug.Write("WriteOutput - SQL Server");
+            return false;
         }
 
-        public override void CustomProcessing()
+        public override bool CustomProcessing()
         {
-            Debug.Write("This is CustomProcessing for DB - SQLServer");
+            Debug.Write("CustomProcessing - SQLServer");
+            return true;
         }
 
     }
 
     public class OracleWriter : DBWriter, IOutputWriterOracle
     {
-        public override void WriteOutput(string resource)
+        public override bool WriteOutput(string resource)
         {
-            throw new Exception("Not Implemented");
+            Debug.Write("WriteOutput - Oracle");
+            return true;
         }
 
-        public override void CustomProcessing()
+        public override bool CustomProcessing()
         {
-            Debug.Write("This is CustomProcessing for DB - Oracle");
+            Debug.Write("CustomProcessing - Oracle");
+            return true;
         }
 
     }

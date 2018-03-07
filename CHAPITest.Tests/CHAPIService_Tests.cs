@@ -29,5 +29,27 @@ namespace CHAPIService.Tests
 
         }
 
+        [TestMethod]
+        public void OutputWriterWriteOutputRun()
+        {
+            OutputFactory outputFactory = new OutputFactory();
+            IOutputWriter outWriter = outputFactory.CreateOutputWriter();
+            Debug.Write("Test OutputWriterOutputRun");
+
+            Assert.IsTrue(outWriter.WriteOutput("Hello World from Testing"));
+
+        }
+
+        [TestMethod]
+        public void OutputWriterCustomProcessingRun()
+        {
+            OutputFactory outputFactory = new OutputFactory();
+            IOutputWriter outWriter = outputFactory.CreateOutputWriter();
+            Debug.Write("Test OutputWriterObtained");
+
+            Assert.IsTrue(outWriter.CustomProcessing());
+
+        }
+
     }
 }

@@ -4,13 +4,13 @@ namespace Factory
 {
     public interface IOutputWriter
     {
-        void WriteOutput(string Resource);
-        void CustomProcessing();
+        bool WriteOutput(string Resource);
+        bool CustomProcessing();
     }
 
     public interface IOutputWriterConsole: IOutputWriter
     {
-        new void CustomProcessing();
+        new bool CustomProcessing();
     }
 
     public interface IOutputWriterDB : IOutputWriter
@@ -19,12 +19,12 @@ namespace Factory
 
     public interface IOutputWriterSQLServer : IOutputWriterDB
     {
-        new void CustomProcessing();
+        new bool CustomProcessing();
     }
 
     public interface IOutputWriterOracle : IOutputWriterDB
     {
-        new void CustomProcessing();
+        new bool CustomProcessing();
     }
 
 }

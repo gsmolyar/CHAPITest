@@ -22,10 +22,19 @@ namespace CHAPIClient
             // Ask Factory to instantiate the specific output writer based on configuration
             IOutputWriter outWriter = outputFactory.CreateOutputWriter();
 
-            // Execute the output writer's functions
+            // Execute the output writer's functions directly
             outWriter.CustomProcessing();
             outWriter.WriteOutput("Hello World");
-            
+
+            // Invoke another class's functionality with OutputWriter injected dynamically at run time (Dependency Injection)
+            TestRunner testRunr = new TestRunner(outWriter, "Hello World");
+            // Execute the output writer's functions directly
+            testRunr.CustomProcessing();
+            testRunr.WriteOutput();
+
+
+
+
 
 
 
