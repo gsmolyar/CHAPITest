@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPIService", "CHAPITest\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPIService.Tests", "CHAPITest.Tests\CHAPIService.Tests.csproj", "{C15EFD2C-2655-47F2-943D-D793422F8BDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAPIClient", "CHAPIClient\CHAPIClient.csproj", "{F1E04CBB-E4FC-4C51-88BC-8F721A6084E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C15EFD2C-2655-47F2-943D-D793422F8BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C15EFD2C-2655-47F2-943D-D793422F8BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C15EFD2C-2655-47F2-943D-D793422F8BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E04CBB-E4FC-4C51-88BC-8F721A6084E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E04CBB-E4FC-4C51-88BC-8F721A6084E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E04CBB-E4FC-4C51-88BC-8F721A6084E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E04CBB-E4FC-4C51-88BC-8F721A6084E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

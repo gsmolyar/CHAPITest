@@ -9,6 +9,22 @@ namespace CHAPITest.Controllers
 {
     public class CHAPIController : ApiController
     {
+
+        //public string GetURL()
+        //{
+        //    //var url = this.Url.Link("Default", new { Controller = "MyMvc", Action = "MyAction", param1 = 1, param2 = "somestring" });
+        //    var url = this.Url.Link("Default", new { Controller = "CHAPI", Action = "Post" });
+        //    return url;
+        //}
+
+        public IEnumerable<string> GetURL()
+        {
+            // returns /api/values/123
+            string url = Url.Route("DefaultApi", new { controller = "CHAPI" });
+            return new string[] { "value1", "value2" };
+        }
+
+
         // GET: api/CHAPI
         public IEnumerable<string> Get()
         {
