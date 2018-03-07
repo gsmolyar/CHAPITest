@@ -1,4 +1,6 @@
- CHAPITest
+
+
+CHAPITest
 Write a ‘Hello World’ program. 
 
 a.	The program has 1 current business requirement – write “Hello World” to the console/screen. 
@@ -21,3 +23,14 @@ See CHAPIService.Tests
 
 
 Please send this back via GitHub.
+
+
+
+Assumptions:
+c – writing to a database, “console application“ – assume that these are output targets, i.e., write to DB, write to Windows Console (Console.Write(“Hello World”);).
+ 
+
+Notes:
+A Web API service was written but is not yet fully operational.
+
+ 
